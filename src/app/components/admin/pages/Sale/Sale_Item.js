@@ -1,0 +1,68 @@
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import * as actions from "../../../../_actions/custommer/isDisplayForm/DisplayForm";
+function Product_Item(props) {
+  let { value } = props;
+  console.log(value);
+  const dispatch = useDispatch();
+  const { register } = useForm();
+  const onDelete = (id) => {
+    props.onDeleteId(id);
+  };
+  const onEdit = (id) => {
+    let value = true;
+    props.onEdit(id, value);
+    dispatch(actions.openForm());
+  };
+  return (
+    <tr className="order">
+      <td style={{ textAlign: "center" }}>
+        <input
+          type="checkbox"
+          placeholder="Deleted"
+          name="Deleted"
+          ref={register}
+        />
+      </td>
+      <td>{value.id}</td>
+      <td className="name">
+        <img
+          src={value.url}
+          alt="Mountain"
+          width="80px"
+          height="80px"
+          style={{ objectFit: "contain" }}
+        ></img>
+        <div className="product-name">
+          <p>{value.name}</p>
+        </div>
+        <div className="product-quantity">x{value.quantity_in_stock}</div>
+      </td>
+      <td>{ value.total_price}</td>
+      <td>{value.status}</td>
+      <td>{value.created_at}</td>
+      <td>
+        <button
+          type="button"
+          onClick={() => onDelete(value.id)}
+          class="btn btn-danger"
+          style={{ padding: "5px 10px" }}
+        >
+          Xóa
+        </button>
+
+        <button
+          type="button"
+          onClick={() => onEdit(value.id)}
+          class="btn btn-primary"
+          style={{ padding: "5px 10px" }}
+        >
+          Xem
+        </button>
+      </td>
+    </tr>
+  );
+}
+
+export default Product_Item;

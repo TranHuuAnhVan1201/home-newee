@@ -1,0 +1,69 @@
+.body-cate {
+    margin: 0 auto;
+    width: 100%;
+    padding: 0 24px;
+    nav {
+        width: calc(100% - 48px);
+        height: 50px;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        border-bottom: 1px solid #DDD;
+        margin-bottom: 16px;
+        a {
+            cursor: pointer;
+            display: block;
+            height: auto;
+            padding: 0 10px;
+            align-items: center;
+            color: #000;
+            line-height: 50px;
+            height: 50px;
+        }
+        a:hover , a:active {
+            text-decoration: none;
+            color: #e84f20;
+            border-bottom: 2px solid #e84f20;
+        }
+    }
+
+
+    .form-group.av {
+        display: flex;
+        height: 30px;
+
+        .btn-group {
+            display: flex;
+            justify-content: space-between;
+            width: calc(100% - 48px);
+        }
+        label, input, button{
+            border: none;
+            height: 30px;
+            line-height: 30px;
+            border: 1px solid #DDD;
+            border-radius: 3px;
+            padding: 0 20px;
+        }
+    }
+
+    .pagination>li>a,
+    .pagination>li>span {
+        // position: relative;
+        // float: left;
+        position: static;
+        padding: 6px 12px;
+        margin: 0 2px;
+        line-height: 1.42857143;
+        color: #337ab7;
+        text-decoration: none;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        cursor: pointer;
+    }
+    .pagination>li:hover > a,
+    .pagination>li:hover > span {
+        background: #337ab7;
+        color: #FFF;
+    }
+}

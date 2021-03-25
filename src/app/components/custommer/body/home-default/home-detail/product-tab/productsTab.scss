@@ -1,0 +1,155 @@
+#owl-promo {
+    border: 3px solid #eee;
+    width: 100%;
+}
+.product-best-sale #owl-promo {
+    border: 3px solid #ba0953;
+    width: 100%;
+}
+
+.homepromo {
+    clear: both;
+    display: block;
+    background: #fff;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    flex: 1 100%;
+    border-top: 1px solid #eee;
+    margin-bottom: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.item2020 {
+    height: auto !important;
+}
+
+.owl-carousel {
+    position: relative;
+    width: 100%;
+    /* -ms-touch-action: pan-y; */
+}
+
+.owl-carousel .owl-wrapper-outer {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+}
+
+.owl-carousel .owl-warpper {
+    width: 9690px;
+    display: none;
+    position: relative;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+.product-star .owl-carousel .owl-warpper {
+    width: 1240px;
+}
+
+.homepromo .owl-item {
+    float: left;
+    width: 248px;
+    height: 334px;
+    cursor: pointer;
+    overflow: hidden;
+}
+.homepromo .owl-item.star {
+    width: 476px;
+}
+
+.homepromo.product-tab .owl-item {
+    height: 334px;
+}
+.homepromo .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px; 
+    height: 334px;
+    .item-img {
+        position: relative;
+        margin: 0 auto;
+        width: 200px;
+        height: 200px;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 200px;
+            object-fit: contain;
+            z-index: 1;
+            margin: 0;
+            padding: 0;
+        }
+       
+    }
+    .item-title {
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 2;
+        overflow: hidden;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 5px 0px 4px;
+        line-height: 20px;
+    }
+    .item-rate {
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        .star{
+            .icontgdd-star {
+                background-image: url("https://www.thegioididong.com/Content/desktop/images/V5/icondesktop20200728@1x.png?v=2");
+                width: 12px;
+                height: 12px;
+                background-position: -295px -30px;
+            }
+        }
+        .review {
+            font-size: 12px;
+            height: 12px;
+            padding-left: 6px;
+        }
+    }
+    .item-price {
+        font-size: 15px;
+        line-height: 24px;
+        text-align: center;
+        font-weight: 500;
+        color: rgb(36, 36, 36);
+        margin: 12px 0px 8px;
+        display: flex;
+        span {
+            text-decoration: none;
+            margin: 0px 8px 0px 0px;
+            font-size: 15px;
+            font-weight: 600;
+        }
+        span.item-sale {
+            font-size: 13px;
+            height: 20px;
+            line-height: 20px;
+            border-radius: 2px;
+            background: rgb(255, 66, 78);
+            color: white;
+            padding: 0px 2px;
+            text-align: center;
+        }
+    }
+        
+    
+}
+.homepromo .item:hover {
+    box-shadow: 0px 0px 20px #000;
+    z-index: 2;
+    border: 2px solid transparent;
+    transition: 0.3s;
+}

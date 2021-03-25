@@ -1,0 +1,41 @@
+.need{
+    width: 100%;
+    height: auto;
+    .item.col-3 {
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        width: 100%;
+        margin-top: 16px;
+        margin-bottom: 15px;
+        a {
+            display: block;
+            width: 31.5%;
+            height: 150px;
+            background-color: rgb(232, 232, 232);
+            border-radius: 20px;
+            overflow: hidden;
+            a > img {
+               width: 100%;
+               max-width: 100%;
+            }
+        }
+        .need a:not(:last-child):after {
+            content: '';
+            width: 2px;
+            height: 49%;
+            background-color: #eee;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            margin: auto;
+            position: absolute;
+        }
+    }
+    
+}
+
+
+    
+       
+    

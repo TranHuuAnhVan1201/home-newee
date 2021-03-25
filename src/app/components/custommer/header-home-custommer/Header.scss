@@ -1,0 +1,156 @@
+header {
+    width: 100vw;
+    height: 102px;
+    max-height: 102px;
+    min-height: 102px;
+    background: var(--bg-primary);
+    .header-top {
+        height: 70px;
+        padding: 18px 0px 8px;
+        display: flex;
+        justify-content: space-between;
+        .header-top-left {
+            display: flex;
+            flex-direction: row;
+            align-items: flex-start;
+            padding-right: 18px;
+            .logo-menu {
+                display: flex;
+                flex-basis: 248px;
+                width: 248px;
+                justify-content: space-between;
+                
+                a {
+                    width: 60px;
+                    height: 40px;
+                    line-height: 40px;
+                    display: block;
+                    -webkit-box-pack: justify;
+                    justify-content: space-between;
+                    align-items: flex-end;
+                    margin-right: 16px;
+                    color: #FFF;
+                    font-size: 20px;
+                    font-weight: 800;
+                    letter-spacing: 5px;
+                    text-transform: uppercase;
+                }
+                .menu {
+                    cursor: pointer;
+                    width: 120px;
+                    display: flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    justify-content: center;
+                    color: rgb(255, 255, 255);
+                    font-size: 14px;
+                    font-weight: 400;
+                    padding-right: 10px;
+                    i {
+                        font-size: 22px;
+                        padding-right: 10px;
+                    }
+                        .wrap i {
+                            font-size: 13px;
+                        }
+
+
+                }
+            }
+            .search {
+                width: 710px;
+                height: 40px;
+                display: flex;
+                input {
+                    width: 590px;
+                    padding: 0 15px;
+                    border: 0px;
+                    padding: 0px 12px;
+                    font-size: 13px;
+                    border-radius: 2px 0px 0px 2px;
+                    flex: 1 1 0%;
+                    outline: none;
+                }
+                button {
+                    width: 120px;
+                    cursor: pointer;
+                    border: 0px;
+                    background: rgb(13, 92, 182);
+                    height: 40px;
+                    border-radius: 0px 2px 2px 0px;
+                    color: white;
+                    font-size: 13px;
+                    font-weight: 500;
+                    outline: none;
+                    display: flex;
+                    -webkit-box-align: center;
+                    align-items: center;
+                    -webkit-box-pack: center;
+                    justify-content: center;
+                    i {
+                        padding-right: 10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+        }
+        .header-top-right {
+            display: flex;
+            cursor: pointer;
+            .header-login {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                width: auto;
+                padding-right: 10px;
+                i {
+                    font-size: 22px;
+                    width: 20%;
+                }
+                div {
+                    width: 130px;
+                    max-width: 130px;
+                    line-height: 20px;
+                    
+                    span {
+                        font-size: 13px;
+                    }
+                    span.text-icon {
+                        font-size: 14px;
+                        i {font-size: 13px;}
+                    }
+                }
+            }
+            .header-cart{
+                width: 105px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                padding-bottom: 8px;
+                i{font-size: 22px; padding-right: 10px;}
+
+                span{font-size: 14px; text-align: end;}
+            }
+        }
+        .header-top-right *{
+            color: #FFF;
+            
+        }
+
+    }
+    .header-bottom{
+        max-height: 32px;
+        height: 32px;
+        margin-left: 248px;
+        a {
+            font-size: 12px;
+            font-weight: normal;
+            font-stretch: normal;
+            font-style: normal;
+            line-height: 1.45;
+            letter-spacing: normal;
+            color: white;
+            margin-right: 12px;
+        }
+    }
+}

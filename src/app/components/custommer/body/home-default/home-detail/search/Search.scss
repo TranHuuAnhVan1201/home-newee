@@ -1,0 +1,65 @@
+.searchs {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    background: #FFF;
+    margin: 16px 0px 0px;
+    border-radius: 4px;
+    padding: 10px 16px 16px;
+    .header {
+        font-size: 20px;
+        line-height: 28px;
+        padding: 10px 0px;
+        display: flex;
+        -webkit-box-pack: justify;
+        justify-content: space-between;
+        align-items: center;
+        cursor: default;
+        text-transform: uppercase;
+        div {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            i {
+                padding-right: 5px;
+            }
+            span.see, i.see {
+                color: rgb(13, 92, 182);
+            }
+        }
+    }
+    .body {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        a {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: left;
+            color: rgb(36, 36, 36);
+            border-radius: 8px;
+            border: 1px solid rgb(238, 238, 238);
+            overflow: hidden;
+            .col-3 {
+                display: flex;
+                width: 100%;
+                height: auto;
+                padding: 8px;
+                img {
+                    height: 86px;
+                    width: 86px;
+                }
+            }
+            span {
+                display: flex;
+                flex-direction: column;
+                padding: 8px 12px;
+                align-self: flex-start;
+                width: 100%;
+                flex: 1 1 0%;
+                background-color: rgb(255, 241, 241);
+            }
+        }
+    }
+}

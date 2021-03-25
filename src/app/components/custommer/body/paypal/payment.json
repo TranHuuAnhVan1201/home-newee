@@ -1,0 +1,17 @@
+create_time: "2021-03-06T15:44:04Z"
+id: "1P716440AY0124808"
+intent: "CAPTURE"
+links: [{…}]
+payer: {email_address: "sb-nmz6d5292035@personal.example.com", payer_id: "4S7USXFEYPCTE", address: {…}, name: {…}}
+purchase_units: [{…}]
+status: "COMPLETED"
+update_time: "2021-03-06T15:44:23Z
+
+create_time: "2021-03-06T15:44:04Z"
+id: "1P716440AY0124808"
+intent: "CAPTURE"
+links: [{…}]
+payer: {email_address: "sb-nmz6d5292035@personal.example.com", payer_id: "4S7USXFEYPCTE", address: {…}, name: {…}}
+purchase_units: [{…}]
+status: "COMPLETED"
+update_time: "2021-03-06T15:44:23Z"

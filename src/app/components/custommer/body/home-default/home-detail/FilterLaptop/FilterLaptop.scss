@@ -1,0 +1,29 @@
+
+.filter.laptop{
+    margin-top: -20px;
+    border-bottom: 1px solid #eee;
+    border-right: none;
+    border-left: none;
+}
+    .filter.laptop h1 {
+        border-top: none;
+        display: inline-block;
+        vertical-align: top;
+    }
+    .filter h1 {
+        display: block;
+        font-weight: bold;
+        height: 50px;
+        line-height: 50px;
+        font-size: 22px;
+        text-transform: uppercase;
+        background-color: #fff;
+    }
+    .filter h3 {
+        float: right;
+        line-height: 50px;
+        height: 50px;
+        font-size: 16px;
+        color: #288ad6;
+        padding-right: 10px;
+    }

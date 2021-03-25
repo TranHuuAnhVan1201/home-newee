@@ -1,0 +1,859 @@
+* {padding: 0 ;margin: 0;}
+
+body, input, button, option, textarea, label, legend, h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a{
+    color: #333;
+    outline: none;
+    zoom: 1;
+    padding: 0;
+    margin: 0;
+}
+body{
+    
+    position: relative;
+    font-size: 16px;
+}
+body::before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 1000px;
+    min-height: 1000px;
+    z-index: -1;
+}
+
+
+section {
+    max-width: 1200px;
+    width: 100%;
+    min-width: 1024px;
+    margin: 0px auto 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+a,
+a:active,
+a:hover,
+a:link,
+a:visited {
+    text-decoration: none;
+    color: rgba(0, 0, 0, .9);
+}
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+.clr {
+    clear: both;
+}
+
+
+/* end header */
+
+
+.titlePictures {
+    display: block;
+    width: 100%;
+    height: 45px;
+    padding: 0;
+    margin-bottom: -1px;
+    padding-top: 0;
+}
+/* detail */
+/* chi tiet */
+.breadcrumb {
+    display: block;
+    overflow: hidden;
+    background-color: #fff;
+    line-height: 32px;
+    padding-top: 5px;
+}
+
+.breadcrumb li {
+    display: inline;
+    vertical-align: middle;
+    overflow: hidden;
+}
+
+.breadcrumb li a {
+    white-space: nowrap;
+    font-size: 14px;
+    color: #288ad6;
+    padding: 0 10px;
+}
+.breadcrumb li:first-child a{
+    padding: 0 10px 0 0;
+}
+
+h1 {
+    float: left;
+    overflow: hidden;
+    font-size: 24px;
+    color: #333;
+    line-height: 40px;
+}
+
+.ratingresult {
+    float: left;
+    font-size: 14px;
+    color: #288ad6;
+    padding: 10px 10px 0 12px;
+}
+
+.ratingresult span.star i.icontgdd-star {
+    background-position: -295px -30px;
+    width: 12px;
+    height: 12px;
+}
+
+.ratingresult a {
+    color: #288ad6;
+    display: inline-block;
+    vertical-align: middle;
+    padding-top: 2px;
+    margin-left: 8px;
+}
+
+.checkexist,
+.likeshare {
+    margin-right: 10px;
+}
+
+.likeshare {
+    float: right;
+    font-size: 14px;
+    margin: 10px 0 0 0;
+}
+
+/* rowdetail */
+.rowdetail {
+    display: block;
+    border-top: 1px solid #e5e5e5;
+    padding: 15px 0;
+    margin-top: 5px;
+    clear: both;
+    position: relative;
+}
+
+/* ảnh sản phẩm. */
+.picture {
+    float: left;
+    overflow: hidden;
+    width: 42%;
+    position: relative;
+    margin-bottom: 20px;
+}
+
+.picture .icon-position {
+    position: relative;
+}
+
+.picture img {
+    display: block;
+    height: auto;
+    margin: auto;
+    cursor: pointer;
+    max-width: 100%;
+}
+
+img {
+    border: 0;
+}
+
+.picture img.icon-imgNew {
+    position: absolute;
+    right: 51px;
+    bottom: 0;
+    width: 100px;
+    height: auto;
+}
+
+/* aảnh chi tiết sản phẩm */
+.colorandpic {
+    display: block;
+    position: relative;
+    padding: 0 24px;
+    margin: 15px 0 0 0;
+}
+
+.colorandpic ul {
+    display: block;
+    overflow: visible;
+    margin: auto;
+    text-align: center;
+    max-height: 98px;
+}
+
+.colorandpic li {
+    display: inline-block;
+    vertical-align: top;
+    text-align: center;
+    overflow: hidden;
+    font-size: 12px;
+    color: #333;
+    padding-bottom: 5px;
+    line-height: normal;
+    width: 60px;
+}
+
+/* đóng khugn */
+.colorandpic li div {
+    display: block;
+    width: 46px;
+    height: 46px;
+    border: 1px solid #dfdfdf;
+    border-radius: 4px;
+    padding: 6px;
+    background: #fff;
+    margin-bottom: 5px;
+    cursor: pointer;
+}
+
+/* video */
+.icontgdd-video {
+    background-position: -325px -50px;
+    width: 30px;
+    height: 24px;
+    display: block;
+    margin: 12px auto;
+}
+
+/* mở hộp */
+.icontgdd-box {
+    background-position: -215px -50px;
+    width: 30px;
+    height: 30px;
+    display: block;
+    margin: 8px auto;
+}
+
+.icontgdd-360 {
+    background-position: -280px -50px;
+    width: 39px;
+    height: 22px;
+    display: block;
+    margin: 14px auto;
+}
+
+.colorandpic .prev,
+.colorandpic .next {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 20px;
+    background: #fff;
+    cursor: pointer;
+}
+
+.colorandpic .prev {
+    left: 0;
+    padding-top: 20px;
+}
+
+.colorandpic .next {
+    right: 0;
+    padding-top: 20px;
+}
+
+.icontgdd-prevthumd {
+    background-position: -180px -50px;
+    width: 12px;
+    height: 21px;
+    margin-left: 5px;
+}
+
+.icontgdd-nextthumd {
+    background-position: -195px -50px;
+    width: 12px;
+    height: 21px;
+    float: right;
+}
+
+/* gias basn */
+.price_sale {
+    float: left;
+    position: relative;
+    width: 33%;
+    margin: 0 1% 0 1%;
+}
+
+.h-province.dt>div>b {
+    cursor: pointer;
+}
+
+.h-province.detail>div>b {
+    font-size: 14px;
+    color: #4A90E2;
+}
+
+/* promotion */
+.area_promotion {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    position: relative;
+    margin: 5px 10px 12px;
+    background: #fff;
+    padding-bottom: 10px;
+}
+
+.area_promotion {
+    margin-top: 10px;
+}
+
+.area_price {
+    display: inline-block;
+    vertical-align: middle;
+    padding-right: 0;
+    padding-bottom: 5px;
+}
+
+.area_price {
+    display: block;
+    overflow: hidden;
+    line-height: 20px;
+    padding: 0 10px 10px;
+}
+
+.area_price strong {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 20px;
+    color: #bf081f;
+    vertical-align: middle;
+    margin-right: 5px;
+    position: relative;
+}
+
+.area_price span.hisprice {
+    display: inline-block;
+    vertical-align: middle;
+    font-size: 14px;
+    color: #333;
+    text-decoration: line-through;
+    margin-right: 5px;
+}
+
+.area_price i {
+    display: inline-block;
+    overflow: hidden;
+    font-size: 14px;
+    color: #bf081f;
+    vertical-align: middle;
+    font-style: normal;
+    margin-right: 5px;
+}
+
+.area_promotion>strong {
+    display: block;
+    overflow: hidden;
+    font-size: 15px;
+    color: #333;
+    padding: 10px 15px 8px 15px;
+    text-transform: uppercase;
+    background-color: #f6f6f6;
+    border-bottom: 1px solid #ddd;
+    margin-bottom: 10px;
+}
+
+.area_promotion strong i {
+    font-style: normal;
+    font-weight: normal;
+    font-size: 12px;
+    color: #666;
+    display: block;
+    text-transform: none;
+    padding-top: 1px;
+}
+
+.area_promotion .infopr span {
+    display: block;
+    overflow: hidden;
+    font-size: 14px;
+    color: #333;
+    padding: 0 15px 5px 40px;
+}
+
+.area_promotion .infopr span:before {
+    content: '';
+    margin-left: -20px;
+    background: url("https://www.thegioididong.com/Content/desktop/images/V4/game/check@2x.png");
+    width: 14px;
+    height: 14px;
+    background-size: 14px 14px;
+    margin-right: 0;
+    float: left;
+    margin-top: 2px;
+}
+
+.notechoose {
+    background: #fbda00;
+    padding: 10px;
+    margin: 10px;
+    display: none;
+    font-size: 12px;
+    color: #333;
+    text-align: left;
+}
+
+.promo_BHX {
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 12px 12px 5px 12px;
+    border-radius: 4px;
+}
+
+.area_promotion .promo_BHX {
+    margin-left: 0;
+    margin-right: 0;
+    border-left: none;
+    border-right: none;
+    border-top-style: dashed;
+    border-bottom-style: dashed;
+    padding-top: 8px;
+}
+
+.promo_BHX .l1 {
+    float: left;
+}
+
+.promo_BHX .l1 img {
+    width: 16px;
+}
+
+.promo_BHX .l2 {
+    float: right;
+    width: calc(100% - 25px);
+}
+
+.promo_BHX .l2 a {
+    color: #288ad6;
+}
+
+.promo_BHX .l2 div p strong {
+    color: #e10c00;
+}
+
+.promo_BHX .l2 p {
+    font-size: 14px;
+    position: relative;
+    padding-left: 10px;
+    overflow: hidden;
+}
+
+.promo_BHX .l2 p:after {
+    position: absolute;
+    content: '';
+    width: 4px;
+    height: 4px;
+    left: 0;
+    top: 8px;
+    background: #000;
+    border-radius: 50%;
+}
+
+.promo_BHX .l2 p.first-pap {
+    margin-bottom: 5px;
+}
+
+/* contact */
+.area_order {
+    display: block;
+    overflow: hidden;
+    margin: 10px;
+    position: relative;
+}
+
+.area_order .buy_now {
+    display: block;
+    overflow: hidden;
+    padding: 7px 0;
+    border-radius: 4px;
+    font-size: 16px;
+    line-height: normal;
+    text-transform: uppercase;
+    color: #fff;
+    text-align: center;
+    background: #fd6e1d;
+    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#fd6e1d), to(#f59000));
+    background: -webkit-linear-gradient(top, #f59000, #fd6e1d);
+    background: -moz-linear-gradient(top, #f59000, #fd6e1d);
+    background: -ms-linear-gradient(top, #f59000, #fd6e1d);
+    background: -o-linear-gradient(top, #f59000, #fd6e1d);
+}
+
+.area_order .buy_now b {
+    display: block;
+}
+
+.area_order span {
+    display: block;
+    font-size: 13px;
+    color: #fff;
+    text-transform: none;
+    padding-top: 3px;
+}
+
+.area_order .buy_repay {
+    line-height: normal;
+    display: block;
+    padding: 7px 0;
+    text-align: center;
+    margin: 10px 0 0;
+    background: #288ad6;
+    color: #fff;
+    -moz-border-radius: 4px;
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    font-size: 15px;
+    text-transform: uppercase;
+    width: 48.5%;
+    float: left;
+}
+
+.area_order .buy_repay.s {
+    float: right;
+}
+
+/* rightInfo */
+.rightInfo {
+    float: right;
+    width: 22.5%;
+    overflow: visible;
+    background: #fff;
+    position: relative;
+}
+
+.policy {
+    display: block;
+    overflow: hidden;
+    border: 1px solid #ddd;
+    border-radius: 3px;
+    padding-bottom: 5px;
+    margin-bottom: 10px;
+    padding-top: 10px;
+}
+
+
+.policy li {
+    display: block;
+    overflow: hidden;
+    padding: 7px 0 7px 28px;
+    font-size: 14px;
+    color: #333;
+    line-height: 20px;
+    margin: 0 10px;
+    border-bottom: solid 1px #f0f0f0;
+    position: relative;
+}
+
+.policy li:first-child {
+    padding-top: 0;
+    min-height: 30px;
+}
+
+.policy .inpr:before {
+    content: '';
+    background: url("https://www.thegioididong.com/Content/desktop/images/V4/game/trong-hop-co@2x.png") 0 0 no-repeat;
+    width: 19px;
+    height: 16px;
+    background-size: 19px 16px;
+    position: absolute;
+    display: block;
+    top: 4px;
+    left: 0;
+}
+
+.policy .wrpr:before {
+    content: '';
+    background: url("https://www.thegioididong.com/Content/desktop/images/V4/game/bao-hanh-chinh-hang@2x.png") 2px 0 no-repeat;
+    width: 19px;
+    height: 23px;
+    background-size: 16px 23px;
+    position: absolute;
+    display: block;
+    top: 4px;
+    left: 0;
+}
+
+.policy .chpr:before {
+    content: '';
+    background: url("https://www.thegioididong.com/Content/desktop/images/V4/game/1-doi-1@2x.png") 0 0 no-repeat;
+    width: 18px;
+    height: 20px;
+    background-size: 18px 20px;
+    position: absolute;
+    display: block;
+    top: 6px;
+    left: 0;
+}
+
+/* end rightInfo */
+/* end rowdetail */
+
+/* box-content */
+.box_content {
+    display: block;
+    overflow: hidden;
+    border-top: 1px solid #e4e4e4;
+    margin-top: 15px;
+}
+
+.left_content {
+    float: left;
+    width: 65%;
+    overflow: hidden;
+    position: relative;
+    margin: 20px 0;
+}
+
+.right_content {
+    float: right;
+    width: 35%;
+    overflow: visible;
+    margin: 20px 0;
+}
+
+/* left-content */
+.characteristics {
+    display: block;
+    overflow: hidden;
+    position: relative;
+    padding-bottom: 20px;
+    cursor: pointer;
+}
+
+.characteristics h4,
+.characteristics h3,
+.characteristics h2 {
+    display: block;
+    line-height: 1.3em;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+article.area_articleFull {
+    overflow: visible;
+}
+
+article {
+    display: block;
+    font-size: 16px;
+    color: #333;
+    line-height: 1.5;
+    margin-top: 15px;
+    max-width: 750px;
+    overflow: hidden;
+}
+
+article h2,
+article h3 {
+    display: block;
+    overflow: hidden;
+    font-size: 20px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.3em;
+    font-weight: bold;
+}
+
+article h2 a,
+article h3 a {
+    font-weight: bold;
+    font-size: 20px;
+}
+
+article a {
+    color: #50a8e3;
+}
+
+article p {
+    display: block;
+    margin: 10px 0;
+}
+
+#owl-detail .item img.iYt {
+    position: absolute;
+    width: auto;
+    margin: auto;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+}
+
+#owl-detail .item img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.parameter {
+    display: block;
+    position: relative;
+    overflow: hidden;
+    background: #fff;
+    padding-top: 10px;
+}
+
+.parameter li {
+    display: table;
+    background: #fff;
+    width: 100%;
+    border-top: 1px solid #eee;
+    padding: 5px 0;
+}
+
+.parameter li span {
+    display: table-cell;
+    width: 40%;
+    vertical-align: top;
+    padding: 5px 0;
+    font-size: 14px;
+    color: #666;
+}
+
+.parameter li div {
+    display: table-cell;
+    width: auto;
+    vertical-align: top;
+    padding: 6px 5px;
+    font-size: 14px;
+    color: #333;
+}
+
+.parameter li div a {
+    color: #288ad6;
+}
+
+.parameter li div.isim {
+    display: block;
+    border-bottom: 1px solid #eee;
+}
+
+.parameter li div.ibsim {
+    display: block;
+}
+
+.parameter li div.ibsim b.h {
+    background: #e91935;
+    color: #fff;
+    padding: 3px 5px;
+    border-radius: 3px;
+    font-size: 10px;
+    margin-right: 5px;
+}
+
+/* xem cau hinh chi tiet */
+.viewparameterfull {
+    display: block;
+    width: 100%;
+    padding: 6px 0;
+    margin: 10px 0 0;
+    cursor: pointer;
+    text-align: center;
+    font-size: 14px;
+    background-color: #288ad6;
+    color: #fff;
+    border: 1px solid #288ad6;
+    border-radius: 4px;
+}
+
+/* endbox-content */
+/* ket thuc chi tiet */
+
+
+/* product laptop*/
+/* laptop và cả điện thoại. */
+.homeproduct li .laptop img,
+.owl-item>.item img {
+    margin: 45px auto;
+    height: auto;
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.homepromo .laptop img {
+    height: auto;
+    margin: 45px auto;
+}
+
+.homeproduct a>img,
+.owl-item>.item img {
+    -webkit-transition: all .2s ease-in-out;
+    -moz-transition: all .2s ease-in-out;
+    -o-transition: all .2s ease-in-out;
+    transition: all .2s ease-in-out;
+}
+
+.homeproduct li img {
+    display: block;
+    width: 180px;
+    height: 180px;
+    margin: 15px auto;
+}
+
+/* end productlaptop */
+
+/* products_related */
+.related {
+    width: 100%;
+    position: relative;
+    clear: both;
+    overflow: hidden;
+    border-top: 1px solid #e4e4e4;
+    border-bottom: 1px solid #e4e4e4;
+    padding: 10px 0 20px;
+    max-height: 950px;
+}
+.related .owl-controls {
+    display: none;
+}
+.related img.icon-imgNew {
+    display: none;
+}
+.related #owl-promo {
+    width: 100%;
+    border: none;
+}
+.related section.homeproductsale {
+    width: 100%;
+    max-width: 100%;
+    min-width: auto;
+    margin: 0px auto auto;
+    position: relative;
+}
+.related section.homeproductsale .owl-carousel .owl-warpper {
+    width: 100%;
+}
+.related section.homeproductsale li.owl-item {
+    float: left;
+    overflow: hidden;
+    width: 25%;
+    padding: 0 5px;
+    box-sizing: border-box;
+    height: auto;
+
+}
+.related .noimage,
+.related .ratingresult {
+    visibility: hidden;
+    opacity: 0;
+    display: none;
+}
+
+/* end products_related */
