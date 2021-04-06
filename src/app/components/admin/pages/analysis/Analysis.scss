@@ -20,7 +20,7 @@
             align-items: flex-start;
 
             .left {
-                width: calc(70% - 16px);
+                width: 70%;
 
                 .left-col {
                     width: 100%;
@@ -42,8 +42,6 @@
                         }
                     }
 
-                    .left-col-group {}
-
                     .analysis-search {
                         .analysis-search-header {
                             display: flex;
@@ -54,8 +52,10 @@
                 }
             }
 
+
+
             .right {
-                width: 30%;
+                width: calc(30% - 16px);
                 display: flex;
                 flex-direction: column;
 

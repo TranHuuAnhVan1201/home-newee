@@ -3,8 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import Modal from "./modal";
 import * as actions from "../../../../../../_actions/custommer/isDisplayForm/DisplayForm";
 import axios from "axios";
-import "./FormNewee.scss";  
-import { Link } from "react-router-dom";
+
+import './FormNewee.scss';
+
 
 function Form(props) {
   let { id } = props;
@@ -64,7 +65,7 @@ function Form(props) {
           </h3>
           <h3>Ngày đặt hàng: 02/03/2021</h3>
           <div class="form-sale-container">
-            <div className="col">
+            <div className="col-container">
               <div className="row-sale">
                 <div className="col-4">
                   <h3 className="title">ĐỊA CHỈ NGƯỜI NHẬN</h3>
@@ -180,8 +181,10 @@ function Form(props) {
               </div>
             </div>
           </div>
+        </form>
+      </Modal>
 
-          {/* <div className="forms form-container">
+      {/* <div className="forms form-container">
             <div className="form-left">
               <div className="h3-group">
                 <h3>Chi tiết đơn hàng: 480 - Đã hủy</h3>
@@ -323,10 +326,11 @@ function Form(props) {
               <li>Thông tin khác</li>
             </div>
           </div> */}
-        </form>
-      </Modal>
     </div>
   );
 }
 
 export default Form;
+
+
+

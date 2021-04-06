@@ -17,7 +17,7 @@ function Carts(props) {
   let TotalCart = 0;
   if (listCarts.numberCart !== 0) {
     listCarts.Carts.forEach((element) => {
-      TotalCart += element.quantity * element.price;
+      TotalCart += element.quantity * element.price1;
     });
   }
 
@@ -174,7 +174,7 @@ function Carts(props) {
                         <ul className="carts-left-product">
                           <li className="d-flex">
                             <div className="carts-product-image">
-                              <img src={value.image} alt="carts"></img>
+                              <img src={value.link} alt="carts"></img>
                             </div>
                             <div className="carts-product-content">
                               <div className="carts-product-content-desc">
@@ -216,22 +216,22 @@ function Carts(props) {
                                   <div className="d-flex-column">
                                     <span className="span-price">
                                       {value.priceSale
-                                        ? formatVND(value.priceSale)
-                                        : formatVND(value.price)}
+                                        ? formatVND(value.priceSeller1)
+                                        : formatVND(value.price1)}
                                       đ
                                     </span>
                                     <div className="span-group">
                                       <span className="span-line-through">
                                         {value.priceSale
-                                          ? formatVND(value.price)
-                                          : formatVND(value.price)}
+                                          ? formatVND(value.price1)
+                                          : formatVND(value.price1)}
                                       </span>
                                       <span className="line-d">|</span>
                                       <span className="cart-discount">
                                         {value.priceSale
                                           ? (
                                               100 -
-                                              (value.priceSale / value.price) *
+                                              (value.priceSeller1 / value.price1) *
                                                 100
                                             ).toFixed(2)
                                           : 0}{" "}

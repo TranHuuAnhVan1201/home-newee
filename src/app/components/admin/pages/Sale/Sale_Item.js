@@ -59,7 +59,7 @@ function Product_Item(props) {
           class="btn btn-primary"
         
         >
-          Sửa
+          Sửa 
         </button>
       </td>
     </tr>

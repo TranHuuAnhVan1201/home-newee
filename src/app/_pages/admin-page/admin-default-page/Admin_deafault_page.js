@@ -65,6 +65,25 @@ const HomeAdmin = React.lazy(() =>
                 Thay đổi ảnh đại diện
               </Link>
             </Link>
+
+            <Link to={"/admin/product"} className="ul">
+              <div>
+                <img
+                  width={24}
+                  height={24}
+                  src={
+                    "https://res.cloudinary.com/cv-thav-herokuapp-com/image/upload/v1617528553/newee/cwazuafakihkuwakpmxv.png"
+                  }
+                  alt="1"
+                ></img>
+                <span>Quản Lý Sản Phẩm</span>
+              </div>
+
+              {/* <Link to={"/admin/product/all"}>Tất Cả</Link>
+              <Link to={"/admin/product/category"}>Phân Loại Sản Phẩm</Link>
+              <Link to={"/admin/product/disable"}>Sản Phẩm Hết Hàng</Link> */}
+            </Link>
+
             <Link to={"/admin/sale"} className="ul">
               <div>
                 <img
@@ -84,26 +103,7 @@ const HomeAdmin = React.lazy(() =>
               <Link to={"/admin/sale/cancel"}>Đơn Hủy</Link>
               <Link to={"/admin/sale/returnlist"}>Trả Hàng / Hoàn Tiền</Link> */}
             </Link>
-
-            <Link to={"/admin/product"} className="ul">
-              <div>
-                <img
-                  width={24}
-                  height={24}
-                  src={
-                    "https://res.cloudinary.com/cv-thav-herokuapp-com/image/upload/v1617528553/newee/cwazuafakihkuwakpmxv.png"
-                  }
-                  alt="1"
-                ></img>
-                <span>Quản Lý Sản Phẩm</span>
-               
-                
-              </div>
-
-              {/* <Link to={"/admin/product/all"}>Tất Cả</Link>
-              <Link to={"/admin/product/category"}>Phân Loại Sản Phẩm</Link>
-              <Link to={"/admin/product/disable"}>Sản Phẩm Hết Hàng</Link> */}
-            </Link>
+            
             <Link to={"/admin/analysis"} className="ul">
               <div>
                 <img

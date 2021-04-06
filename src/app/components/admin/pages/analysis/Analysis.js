@@ -6,7 +6,7 @@ function Analysis(props) {
   return (
     <div className="body-cate analysis">
       <h2>Tổng Quan</h2>
-      <div className="analysis-container">
+      <div className="body-container analysis-container">
         <div className="left">
           <div className="left-col">
             <div className="row">

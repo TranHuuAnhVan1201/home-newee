@@ -44,6 +44,7 @@ function Form(props) {
     dispatch(actions.closeForm());
   };
 
+
   // thêm mới.
   const uploadImage = async (e) => {
     const files = e.target.files;
@@ -186,11 +187,10 @@ function Form(props) {
         }
       );
     } else {
-      /// tự viết
+      /// click
       // thêm mới sản phẩm.
       // connect
       upProduct(data);
-
       if (id) {
         setSuccess(true);
       }

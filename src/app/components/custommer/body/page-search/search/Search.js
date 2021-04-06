@@ -5,6 +5,7 @@ import "./Search.scss";
 import Freeship from "../search-shipping/Freeship";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import { getProduct } from "../../../../../_actions/custommer/products/product";
 
 function Search(props) {
   const GetProduct = useSelector((state) => state.GetProduct);
@@ -55,11 +56,7 @@ function Search(props) {
       let arrPage = [];
       const Post = arr.slice(indexofFirstPost, indexofLastPost);
       setArr(Post);
-      for (
-        let i = 1;
-        i <= Math.ceil(parseInt(arr.length) / postperpage);
-        i++
-      ) {
+      for (let i = 1; i <= Math.ceil(parseInt(arr.length) / postperpage); i++) {
         arrPage.push({ item: i });
       }
       setTotalPages(arrPage);
@@ -73,85 +70,83 @@ function Search(props) {
     handleTab(0);
   }, []);
 
-  
   useEffect(() => {
-    // if (state) {
-    //   getUser();
-    //   if (currentpage) {
-    //     getUser();
-    //   }
-    // }
-    // allResult();
-    // if (list) {
-    //   getUser();
-    // }
-
-    if (setCheckTab) {
-      setList(GetProduct);
+    if (state) {
+      getUser();
+      if (currentpage) {
+        getUser();
+      }
     }
-    
-   
+    // if (setCheckTab) {
+    //   setList(GetProduct);
+    // }
+    setState(GetProduct);
   }, [currentpage, list]);
-
 
   const handleTab = (tab) => {
     setActive(tab);
     setCheckTab(true);
-    if (list) {
+    if (state) {
       switch (tab) {
         case 0:
-          let khuyemai = list.filter(
+          let khuyemai = state.filter(
             // (item) => console.log(item)
             (item) => item.price1 / item.priceSeller1 > 1
           );
-          return setList(khuyemai);
+          setState(khuyemai);
+          getUser();
+          return arr;
         case 1:
-          let value1 = list.filter((item) => item.price1 > 30000);
-         
-          // getUser();
-          return setList(value1);
+          let value1 = state.filter((item) => item.price1 > 30000);
+          setState(value1);
+          getUser();
+
+          return arr;
 
         case 2:
-          let freeship = list.filter((item) => item.price1 === 19000);
-          return setList(freeship);
+          let freeship = state.filter((item) => item.shipping === 1);
+          setState(freeship);
+          return arr;
         case 3:
-          let ascending = list.sort(
-            (a, b) => Number(a.price) - Number(b.price)
+          let ascending = state.sort(
+            (a, b) => Number(a.price1) - Number(b.price1)
           );
           setCheck(!check);
-          setList(ascending);
-          // getUser();
+          setState(ascending);
+          getUser();
           return arr;
         case 4:
-          let ascending2 =list.sort(
-            (a, b) => Number(a.price) - Number(b.price)
+          let ascending2 = state.sort(
+            (a, b) => Number(a.price1) - Number(b.price1)
           );
           setCheck(!check);
-          setList(ascending2.reverse());
-          // getUser();
+          setState(ascending2.reverse());
+          getUser();
           return arr;
         case 5:
-          let ascending3 = list.sort(
+          let ascending3 = state.sort(
             (a, b) =>
-              Number(a.price / a.priceSale) - Number(b.price / b.priceSale)
+              Number(a.price1 / a.priceSeller1) -
+              Number(b.price1 / b.priceSeller1)
           );
           setCheck(!check);
-          setList(ascending3.reverse());
-          // getUser();
+          setState(ascending3.reverse());
+          getUser();
           return arr;
         case 6:
-          let ascending4 = list.sort(
+          let ascending4 = state.sort(
             (a, b) =>
-              Number(a.price / a.priceSale) - Number(b.price / b.priceSale)
+              Number(a.price1 / a.priceSeller1) -
+              Number(b.price1 / b.priceSeller1)
           );
           setCheck(!check);
-          setList(ascending4);
-          // getUser();
+          setState(ascending4);
+          getUser();
           return arr;
         default:
           return;
       }
-  }
+    }
   };
   const handleSort = (sort) => {
     setActivePrice(sort);
@@ -184,8 +179,7 @@ function Search(props) {
 
   const onClickCategory = (id) => {
     productCategory(id);
-    
-  }
+  };
   const apiProduct = axios.create({
     // baseURL: `https://api.newee.asia:5001/Newee/ProductSeller/Getlist/${10}/${1}`,
     baseURL: `https://api.newee.asia:5001/Newee/ProductSeller/Getlist/10/1`,
@@ -210,46 +204,46 @@ function Search(props) {
 
   const productCategory = async (id) => {
     console.log(id);
-      await axios.get(
-          `https://api.newee.asia:5001/Newee/ProductSeller/Getlist/${id}/10/1`,
-          {
-            headers: {
-              "Content-Type": "application/json",
-              Authorization: `bearer ${localStorage.getItem("token")}`,
-            },
-          }
-        )
-        .then((res) => {
-          // setCategorys(res.data.data);
-          console.log(list);
-          setList(res.data.data);
-          setChecks(true);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
-    };
-  const apiCategory = axios.create({
-    // baseURL: `https://api.newee.asia:5001/Newee/ProductSeller/Getlist/${10}/${1}`,
-    baseURL: `https://api.newee.asia:5001/Newee/ProductSeller/GetListCategory`
-  })
-
-    const products = async () => {
-      await apiCategory
-        .get("", {
+    await axios
+      .get(
+        `https://api.newee.asia:5001/Newee/ProductSeller/Getlist/${id}/10/1`,
+        {
           headers: {
             "Content-Type": "application/json",
             Authorization: `bearer ${localStorage.getItem("token")}`,
           },
-        })
-        .then((res) => {
-          setCategorys(res.data.data);
-         
-          setChecks(true);
-        })
-        .catch((error) => {
-          console.error(error);
-        });
+        }
+      )
+      .then((res) => {
+        // setCategorys(res.data.data);
+        console.log(list);
+        setList(res.data.data);
+        setChecks(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  };
+  const apiCategory = axios.create({
+    // baseURL: `https://api.newee.asia:5001/Newee/ProductSeller/Getlist/${10}/${1}`,
+    baseURL: `https://api.newee.asia:5001/Newee/ProductSeller/GetListCategory`,
+  });
+
+  const products = async () => {
+    await apiCategory
+      .get("", {
+        headers: {
+          "Content-Type": "application/json",
+          Authorization: `bearer ${localStorage.getItem("token")}`,
+        },
+      })
+      .then((res) => {
+        setCategorys(res.data.data);
+        setChecks(true);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
   };
   console.log(list);
   return (
@@ -435,7 +429,7 @@ function Search(props) {
             <div className="header-result">
               <h3>Kết quả tìm kiếm: </h3>
               <h4>
-                {list ? list.length : 0} kết quả.{" "}
+                {state ? state.length : 0} kết quả.{" "}
                 {/* {arr !== undefined ? arr.length : 0} kết quả */}
               </h4>
             </div>
@@ -452,7 +446,9 @@ function Search(props) {
               })}
             </div>
           </div>
-          <div className="body">{checks ? <Freeship data={list} /> : null}</div>
+          <div className="body">
+            {checks ? <Freeship data={state} /> : null}
+          </div>
           <nav aria-label="Page navigation example">
             <ul className="pagination">
               {totalPages
