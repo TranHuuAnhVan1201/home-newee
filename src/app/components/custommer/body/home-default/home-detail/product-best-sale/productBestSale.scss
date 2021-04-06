@@ -1,0 +1,151 @@
+
+
+.product-best-sale {
+    width: 100%;
+    max-width: 1240px !important;
+
+
+    .slick-slide {
+        width: 248px !important;
+       
+    }
+    .slick-dots {
+        display: none !important;
+    }
+}
+
+.product-best-sale .item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 16px; 
+    width: auto;
+    max-width: 248px;
+    .deal-sale {
+        position: relative;
+        margin: 0 auto;
+        width: 192px;
+        height: 192px;
+        overflow: hidden;
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 192px;
+            height: 192px;
+            object-fit: contain;
+            z-index: 1;
+            margin: 0;
+            padding: 0;
+        }
+        .deal-discount {
+            // background-color: rgb(255, 66, 78);
+            // color: rgb(255, 255, 255);
+            // font-size: 13px;
+            // line-height: 20px;
+            // font-weight: 500;
+            // position: absolute;
+            // z-index: 3;
+            // top: -2px;
+            // left: -2px;
+            // border-radius: 4px 0px 26px;
+            // padding: 2px 8px 4px 2px; 
+
+            // top: -2px;
+            // right: -2px;
+            // border-radius: 26px 0px 4px;
+            // padding: 4px 6px 4px px;
+            vertical-align: middle;
+            position: absolute;
+            z-index: 3;
+            right: 0;
+            top: 0;
+            color: #fff;
+            font-weight: 600;
+            background: #f51212;
+            border-radius: 3px;
+            // padding: 4px 8px;
+            // margin: 1px 10px 0 5px;
+            padding: 0px 10px;
+            height: 24px;
+            line-height: 24px;
+            text-decoration: none;
+            font-size: 11px;
+            text-align: center;
+        }
+        .deal-discount::before {
+            content: "";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 10px 10px 0 0;
+            border-color: #f00 transparent transparent transparent;
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+        }
+        
+    }
+    // .deal-price {
+    //     font-size: 15px;
+    //     line-height: 24px;
+    //     text-align: center;
+    //     font-weight: 600;
+    //     color: rgb(36, 36, 36);
+    //     margin: 12px 0px 8px;
+    // }
+    .deal-name {
+        text-align: justify;
+        color: rgb(36, 36, 36);
+        display: -webkit-box;
+        -webkit-box-orient: vertical;
+        -webkit-line-clamp: 3;
+        overflow: hidden;
+        font-size: 14px;
+        font-weight: 400;
+        margin: 8px 0;
+        line-height: 24px;
+    }
+    // .deal-total {
+    //     background-color: rgb(255, 170, 175);
+    //     color: rgb(255, 255, 255);
+    //     border-radius: 10px;
+    //     position: relative;
+    //     display: flex;
+    //     width: 100%;
+    //     height: 20px;
+    //     .roundy{
+    //         position: absolute;
+    //         left: 0px;
+    //         top: 0px;
+    //         background-color: rgb(255, 66, 78);
+    //         height: 20px;
+    //         border-radius: 10px;
+    //         min-width: 20px;
+    //     }
+    //     span {
+    //         font-size: 12px;
+    //         line-height: 16px;
+    //         padding: 0px 0px 0px 6px;
+    //         display: flex;
+    //         -webkit-box-align: center;
+    //         align-items: center;
+    //         -webkit-box-pack: center;
+    //         justify-content: center;
+    //         height: 100%;
+    //         width: 100%;
+    //         position: absolute;
+    //         text-align: center;
+
+    //         vertical-align: middle;
+
+    //         text-decoration: none;
+    //         color: #FFF;
+    //     }
+    // }
+}
+.product-best-sale .item:hover {
+    // box-shadow: 0px 0px 10px #000;
+    opacity: 0.75;
+    border: 2px solid rgb(242,242,242);
+}

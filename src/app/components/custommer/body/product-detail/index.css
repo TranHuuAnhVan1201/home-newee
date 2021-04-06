@@ -151,6 +151,11 @@ h1 {
 
 .picture .icon-position {
     position: relative;
+    float: left;
+    overflow: hidden;
+    width: 42%;
+    position: relative;
+    margin-bottom: 20px;
 }
 
 .picture img {

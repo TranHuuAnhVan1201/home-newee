@@ -25,8 +25,8 @@ function Product_Item(props) {
           ref={register}
         />
       </td>
-      <td>{value.id}</td>
-      <td className="name">
+      <td className="td-id" onClick={() => onEdit(value.id)}>{value.id}</td>
+      {/* <td className="name">
         <img
           src={value.url}
           alt="Mountain"
@@ -38,16 +38,17 @@ function Product_Item(props) {
           <p>{value.name}</p>
         </div>
         <div className="product-quantity">x{value.quantity_in_stock}</div>
-      </td>
-      <td>{ value.total_price}</td>
-      <td>{value.status}</td>
+      </td> */}
       <td>{value.created_at}</td>
-      <td>
+      <td>{value.total_price}đ</td>
+      <td>{value.status}</td>
+
+      <td className="td-button-group">
         <button
           type="button"
           onClick={() => onDelete(value.id)}
-          class="btn btn-danger"
-          style={{ padding: "5px 10px" }}
+          class="btns"
+
         >
           Xóa
         </button>
@@ -56,9 +57,9 @@ function Product_Item(props) {
           type="button"
           onClick={() => onEdit(value.id)}
           class="btn btn-primary"
-          style={{ padding: "5px 10px" }}
+        
         >
-          Xem
+          Sửa
         </button>
       </td>
     </tr>

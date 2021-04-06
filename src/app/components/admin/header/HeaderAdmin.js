@@ -14,17 +14,17 @@ function HeaderAdmin(props) {
     window.setTimeout(window.location.reload.bind(window.location), 10);
   };
   return (
-    <header>
+    <header className="admin">
       <div className="wrap-main">
         <nav>
           <li className="logo">
-            <Link to="/admin">LaptopTHAV</Link>
+            <Link to="/admin">Newee Asia</Link>
           </li>
           <div className="menu-info">
             <div className="menu-right">
               <button
                 type="button"
-                class="btn"
+                class="btns"
                 onClick={() => onLogout()}
               >
                 Logout

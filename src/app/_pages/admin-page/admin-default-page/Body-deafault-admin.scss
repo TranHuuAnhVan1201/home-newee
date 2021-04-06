@@ -1,22 +1,14 @@
-body{
-    width: 100vw;
-    height: auto;
-    min-height: 100vh;
-    overflow-x: hidden;
-    overflow-y: scroll;
-    background: #f4f5f7;
-}
+
 .body-deafault-admin{
     display: flex;
     width: 100%;
-
     margin: 0 auto;
     margin-top: 56px;
     .item-body-deafault-admin-left{
-        width: 18%;
+        width: 20%;
         background: #FFF;
         margin: 0;
-        padding: 20px 30px 0;
+        padding: 20px;
         a.ul {
             cursor: pointer;
             display: block;
@@ -26,21 +18,31 @@ body{
             display: flex;
             flex-direction: column;
             font-weight: 600;
+            // padding: 0 10px;
 
-            span {
+           div {
+                display: flex;
+                justify-content: flex-start;
+                align-items: center;
+                span {
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
                 color: #000;
-                padding-right: 50px;
+                padding: 0 8px;
+
             }
 
-            a {
+           }
+              a {
                 display: block;
                 width: 100%;
-                height: 40px;
-                padding: 0 10px 0 20px;
+                height: 30px;
+                line-height: 30px;
+                padding: 0 10px 0 32px;
                 font-weight: 400;
+                font-size: 13px;
+                
             }
 
         }
@@ -54,10 +56,10 @@ body{
         }
     }
     .item-body-deafault-admin-right{
-        width: 82%;
+        width: 80%;
         height: auto;
-        background: #FFF;
+        // background: #FFF;
         margin: 15px;
-        padding: 0 30px 0;
+        // padding: 0 30px 0;
     }
 }

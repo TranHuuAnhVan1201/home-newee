@@ -4,7 +4,9 @@ import { useHistory } from 'react-router';
 
 import './PayPal.scss';
 function PayPal(props) {
-    const listCarts = useSelector(state => state.GetCarts);
+    let total = { props };
+    console.log(total);
+    const listCarts = useSelector(state => state.Shop);
     const paypal = useRef();
     let history = useHistory();
     useEffect(() => {
@@ -16,7 +18,7 @@ function PayPal(props) {
                         {
                             description: "Thanh toán",
                             amount: {
-                                value: parseFloat(listCarts.totalPrice / 2300000).toFixed(2)
+                                value: parseFloat(listCarts.TotalCart / 2300000).toFixed(2)
                             }
                         }
                     ]

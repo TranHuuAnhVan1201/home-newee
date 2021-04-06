@@ -13,6 +13,12 @@ export const getProduct = () => {
         type: types.GETPRODUCT
     }
 }
+export const getSearchResult = (payload) => {
+    return {
+      type: types.SEARCH_RESULT,
+      payload
+    }
+}
 
 
 //Load Product List
@@ -98,5 +104,103 @@ export const getPRODUCT_ID = (product_id) => {
     product_id,
   };
 };
+export const GETSTATE = () => {
+  return {
+    type: types.GETSTATE,
+  };
+};
+
 
 // end bill
+
+
+// cart
+export const addToCart2 = (item) => {
+  return {
+    type: types.ADDTOCART,
+    item
+  }
+}
+export const removeCart2 = (payload) => {
+  return {
+    type: types.REMOVETOCART,
+    payload,
+  };
+};
+
+//
+
+
+//CART
+
+/*GET NUMBER CART*/
+export function GetNumberCartSHOP(){
+    return{
+        type:'GET_NUMBER_CART_SHOP'
+    }
+}
+ 
+export function AddCartSHOP(payload){
+    return {
+        type:'ADD_CART_SHOP',
+        payload
+    }
+}
+export function UpdateCartSHOP(payload){
+    return {
+        type:'UPDATE_CART_SHOP',
+        payload
+    }
+}
+export function DeleteCartSHOP(payload){
+    return{
+        type:'DELETE_CART_SHOP',
+        payload
+    }
+}
+ 
+export function IncreaseQuantitySHOP(payload){
+    return{
+        type:'INCREASE_QUANTITY_SHOP',
+        payload
+    }
+}
+export function DecreaseQuantitySHOP(payload){
+    return{
+        type:'DECREASE_QUANTITY_SHOP',
+        payload
+    }
+}
+export function ClearCart(payload){
+    return {
+      type: "CLEAR_CART_SHOP",
+      payload,
+    };
+}
+
+//END CART
+
+export function chooseStep1(payload) {
+  return {
+    type: "CHOOSE_STEP_1",
+    payload
+  };
+}
+export function chooseStep2(payload) {
+  return {
+    type: "CHOOSE_STEP_2",
+    payload,
+  };
+}
+export function chooseStep3(payload) {
+  return {
+    type: "CHOOSE_STEP_3",
+    payload,
+  };
+}
+export function chooseImageStep3(payload) {
+  return {
+    type: "CHOOSE_STEP_3_IMAGE",
+    payload,
+  };
+}

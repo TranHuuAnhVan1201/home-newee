@@ -8,23 +8,30 @@ import PayPal from "../paypal/PayPal";
 import axios from "axios";
 
 function CartsDefault(props) {
+  const dispatch = useDispatch();
+  let history = useHistory();
   // 1
   const listCarts = useSelector((state) => state.GetCarts);
-  console.log(listCarts);
   const [state, setState] = useState({ ID: 0 });
-  console.log(state.ID);
   const [checkout, setCheckOut] = useState(false);
   const [role, setRole] = useState(null);
-
-  let history = useHistory();
-
+  const [total, setTotal] = React.useState([]);
+  // 2
+  const cartTotal = listCarts.items.reduce(
+    (total, { price = 0 }) => total + price,
+    0
+  );
   useEffect(() => {
     if (localStorage.getItem("token")) {
       var decoded = jwtDecode(localStorage.getItem("token"));
       setRole(decoded.role);
     }
-  }, []);
-  const dispatch = useDispatch();
+
+    setTotal(cartTotal);
+    listCarts.totalPrice = total;
+
+  });
+
   const deleteProductInCart = (item) => {
     dispatch(actions.deleteProductInCart(item));
   };
@@ -42,7 +49,7 @@ function CartsDefault(props) {
       history.push("/login");
     }
   };
-
+  console.log(state);
   const formatVND = (str) => {
     if (typeof str !== "string") {
       let toStr = String(str);
@@ -109,7 +116,6 @@ function CartsDefault(props) {
       history.push("/login");
     }
   };
-  console.log(listCarts);
 
   return (
     <section>
@@ -120,7 +126,7 @@ function CartsDefault(props) {
             <thead>
               <tr>
                 <th>Ảnh</th>
-                <th>Sản phẩm</th>
+                <th>Tên sản phẩm</th>
                 <th>Số lượng</th>
                 <th>Giá </th>
                 <th>Thành tiền</th>
@@ -134,20 +140,37 @@ function CartsDefault(props) {
                     <td>
                       <img src={value.url} alt={123}></img>
                     </td>
-                    <td>{value.title || value.name}</td>
+                    <td className="name">
+                      <div className="product-name">
+                        {value.title || value.name}
+                      </div>
+                    </td>
                     <td className="td-group">
-                      <span onClick={() => Decrease_Quantity(key)}>-</span>
-                      <span>{value.quantity}</span>
-                      <span onClick={() => Increase_Quantity(key)}>+</span>
+                      <div className="group-button">
+                        <button onClick={() => Decrease_Quantity(key)}>
+                          -
+                        </button>
+                        <span className="value">{value.quantity}</span>
+                        <button onClick={() => Increase_Quantity(key)}>
+                          +
+                        </button>
+                      </div>
                     </td>
                     <td>{value.price} đ</td>
-                    <td>
+                    <td style={{ textAlign: "right", paddingRight: "10px" }}>
                       {formatVND(
                         parseInt(parseInt(value.price)) * (value.quantity || 1)
                       )}{" "}
                       đ
                     </td>
-                    <td onClick={() => deleteProductInCart(key)}>xóa</td>
+                    <td>
+                      <button
+                        className="btns"
+                        onClick={() => deleteProductInCart(key)}
+                      >
+                        Xóa
+                      </button>
+                    </td>
                   </tr>
                 );
               })}
@@ -156,28 +179,31 @@ function CartsDefault(props) {
               <tr>
                 <td colSpan={4}>Tổng cộng: </td>
 
-                <td>{formatVND(listCarts.totalPrice)} đ</td>
+                <td>{listCarts.totalPrice} đ</td>
+                <td>Cập nhập</td>
+                <td></td>
+              </tr>
+            </tfoot>
+            <tfoot>
+              <tr>
+                <td colSpan={4}>Tổng cộng: </td>
+
+                <td>{listCarts.totalPrice} đ</td>
+                <td>Cập nhập</td>
                 <td></td>
               </tr>
             </tfoot>
           </table>
         </div>
-        <div className="btn-carts">
-          <Link to="/" className="btn-back link">
-            <i className="fas fa-long-arrow-alt-left"></i>Tiếp tục mua sắm
-          </Link>
-          <button onClick={() => onBuy()}> Mua hàng</button>
-          <Link to="/checkout" className="btn-checkout link">
-            <i className="fas fa-long-arrow-alt-right"></i> Thanh toán
-          </Link>
 
-          {checkout ? (
-            <PayPal />
-          ) : (
-            <button className="btn-checkout link" onClick={handlePayPal}>
-              CheckOut Paypal
-            </button>
-          )}
+        <div className="btn-carts">
+          <button className="btns btn-success larger">
+            <Link to="/">Mua thêm sản phẩm </Link>
+          </button>
+
+          <button className="btns btn-primary larger" onClick={() => onBuy()}>
+            Mua hàng
+          </button>
         </div>
       </div>
     </section>

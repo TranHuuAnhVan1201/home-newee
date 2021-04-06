@@ -46,24 +46,9 @@
             padding: 0 20px;
         }
     }
-
-    .pagination>li>a,
-    .pagination>li>span {
-        // position: relative;
-        // float: left;
-        position: static;
-        padding: 6px 12px;
-        margin: 0 2px;
-        line-height: 1.42857143;
-        color: #337ab7;
-        text-decoration: none;
-        background-color: #fff;
-        border: 1px solid #ddd;
-        cursor: pointer;
-    }
-    .pagination>li:hover > a,
-    .pagination>li:hover > span {
-        background: #337ab7;
-        color: #FFF;
+}
+.td-button-group {
+    .btns {
+        padding: 0 12px;
     }
 }

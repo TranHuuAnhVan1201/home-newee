@@ -1,41 +1,68 @@
-.quick-link {
+.quick-link, .category.cate {
     display: flex;
-    -webkit-box-pack: justify;
-    justify-content: space-between;
-    width: 100%;
-    margin: 16px 0px;
-    padding: 16px 0px;
+    flex-direction: column;
     background: white;
     text-align: center;
     border-radius: 4px;
-
-    .item {
+    h2 {
+        width: 100%;
+        text-align: left;
+        margin: 16px 0;
+    }
+    .container-item {
+        margin: 0 20px;
         display: flex;
-        flex-direction: column;
-        -webkit-box-align: center;
-        align-items: center;
-        flex-basis: 103px;
-        flex-shrink: 0;
-        img {
-            width: 48px;
-            height: 48px;
-            object-fit: contain;
+        -webkit-box-pack: justify;
+        flex-wrap: wrap;
+        width: calc(100% - 39px);
+        border-top: 1px solid rgb(242,242,242);
+        border-right: 1px solid rgb(242,242,242);
+        .item {
+            display: flex;
+            flex-direction: column;
+            -webkit-box-align: center;
+            align-items: center;
+            height: 149px;
+            width: 120px;
+            flex-basis: 120px;
+            border: 1px solid rgb(242,242,242);
+            border-right: transparent;
+            border-top: transparent;
+            // flex-shrink: 0;
+            cursor: pointer;
+            img {
+                width: 83px;
+                height: 76px;
+                object-fit: contain;
+                
+            }
+            span {
+                margin-top: 12px;
+                font-size: 13px;
+                font-weight: normal;
+                font-stretch: normal;
+                font-style: normal;
+                line-height: 1.54;
+                color: rgb(36, 36, 36);
+                width: 81px;
+                display: -webkit-box;
+                -webkit-box-orient: vertical;
+                -webkit-line-clamp: 2;
+                text-overflow: ellipsis;
+                overflow: hidden;
+            }
         }
-        span {
-            margin-top: 12px;
-            font-size: 13px;
-            font-weight: normal;
-            font-stretch: normal;
-            font-style: normal;
-            line-height: 1.54;
-            color: rgb(36, 36, 36);
-            width: 81px;
-            display: -webkit-box;
-            -webkit-box-orient: vertical;
-            -webkit-line-clamp: 2;
-            text-overflow: ellipsis;
-            overflow: hidden;
+        .item:last-child {
+            flex-basis: 120px;
+            border-right: 1px solid rgb(242,242,242);
+            
         }
+        .item:hover,
+        .item:focus {
+            opacity: 0.75;
+        }
+
+       
     }
   
 }

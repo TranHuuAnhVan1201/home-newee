@@ -1,16 +1,7 @@
-#owl-promo {
-    border: 3px solid #eee;
-    width: 100%;
-}
-.product-best-sale #owl-promo {
-    border: 3px solid #ba0953;
-    width: 100%;
-}
 
 .homepromo {
     clear: both;
     display: block;
-    background: #fff;
     display: -webkit-box;
     display: -moz-box;
     display: -ms-flexbox;
@@ -19,8 +10,7 @@
     -webkit-flex-flow: row wrap;
     flex-flow: row wrap;
     flex: 1 100%;
-    border-top: 1px solid #eee;
-    margin-bottom: 15px;
+    margin: 15px 0;
     position: relative;
     overflow: hidden;
 }
@@ -70,8 +60,10 @@
     position: relative;
     display: flex;
     flex-direction: column;
-    padding: 16px; 
+    padding: 12px; 
     height: 334px;
+    margin: 2px;
+    background: #FFF;
     .item-img {
         position: relative;
         margin: 0 auto;
@@ -98,43 +90,55 @@
         overflow: hidden;
         font-size: 14px;
         font-weight: 400;
-        margin: 5px 0px 4px;
-        line-height: 20px;
+        margin: 5px 0px;
+        
     }
     .item-rate {
         display: flex;
         justify-content: flex-start;
         align-items: center;
-        .star{
-            .icontgdd-star {
-                background-image: url("https://www.thegioididong.com/Content/desktop/images/V5/icondesktop20200728@1x.png?v=2");
-                width: 12px;
-                height: 12px;
-                background-position: -295px -30px;
-            }
-        }
-        .review {
-            font-size: 12px;
+        .icon-star {
+            background-image: url("https://www.thegioididong.com/Content/desktop/images/V5/icondesktop20200728@1x.png?v=2");
+            background-repeat: no-repeat;
+            display: inline-block;
             height: 12px;
-            padding-left: 6px;
+            width: 12px;
+            line-height: 30px;
+            vertical-align: middle;
+            background-position: -295px -30px;
+            margin: 0 2px 0 0;
+            
+        }
+        span {
+            padding: 0 0 0 8px;
+            font-size: 14px;
         }
     }
     .item-price {
-        font-size: 15px;
-        line-height: 24px;
+        font-size: 14px;
         text-align: center;
         font-weight: 500;
         color: rgb(36, 36, 36);
-        margin: 12px 0px 8px;
+        margin: 5px 0;
         display: flex;
+        align-items: flex-end;
         span {
             text-decoration: none;
-            margin: 0px 8px 0px 0px;
-            font-size: 15px;
+            margin: 0 6px 0 0;
+            font-size: 13px;
             font-weight: 600;
+            line-height: 15px;
+        }
+        span.deal-discount {
+            color: #bf081f;
+        }
+        span.deal-price {
+            text-decoration: line-through;
+            font-weight: normal;
+            font-size: 12px;
         }
         span.item-sale {
-            font-size: 13px;
+            font-size: 12px;
             height: 20px;
             line-height: 20px;
             border-radius: 2px;
@@ -142,14 +146,27 @@
             color: white;
             padding: 0px 2px;
             text-align: center;
+            font-weight: normal;
         }
+    }
+    .item-coupon {
+        font-size: 12px;
+        color: #d0021b;
+        
     }
         
     
 }
-.homepromo .item:hover {
-    box-shadow: 0px 0px 20px #000;
-    z-index: 2;
-    border: 2px solid transparent;
-    transition: 0.3s;
+.homepromo .item .item-rate span {
+    font-size: 12px;
+}
+
+.product-tab .item:hover {
+    // box-shadow: 20px 20px 20px #000;
+    // z-index: 2;
+    // border: 2px solid transparent;
+    // transition: 0.3s;
+    opacity: 0.75;
+    // border: 2px solid rgb(242, 242, 242);
+    
 }

@@ -1,8 +1,10 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import "./products.scss";
+import "./productBestSale.scss";
+
 import * as actions from "../../../../../../_actions/custommer/products/product";
+import Slider from "react-slick";
 function to_slug(str) {
   // Chuyển hết sang chữ thường
   if (str) {
@@ -47,17 +49,68 @@ function ProductBestSale(props) {
   const getIDName = (item) => {
     dispatch(actions.IDName(item));
   };
+  const formatVND = (str) => {
+    if (typeof str !== "string") {
+      let toStr = String(str);
+      return toStr
+        .split("")
+        .reverse()
+        .reduce((prev, next, index) => {
+          return (index % 3 ? next : next + ".") + prev;
+        });
+    }
+  };
+      var settings = {
+        dots: true,
+        infinite: true,
+        slidesToShow: 5,
+        slidesToScroll: 5,
+        initialSlide: 0,
+
+        autoplay: true,
+        speed: 500,
+        autoplaySpeed: 2000,
+        pauseOnHover: true,
+        responsive: [
+          {
+            breakpoint: 1240,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+              infinite: true,
+              dots: true,
+            },
+          },
+          {
+            breakpoint: 600,
+            settings: {
+              slidesToShow: 3,
+              slidesToScroll: 3,
+              initialSlide: 3,
+            },
+          },
+          {
+            breakpoint: 480,
+            settings: {
+              slidesToShow: 1,
+              slidesToScroll: 1,
+            },
+          },
+        ],
+      };
+  
+
   return (
     <div className="home-product">
       <div className="product-top">
         <section className="homeproductsale product-best-sale">
           <div
             id="owl-promo"
-            className="owl-promo owl-carousel homepromo item2020  owl-theme"
+            className="product-best-sale owl-promo owl-carousel homepromo item2020  owl-theme"
           >
             <div className="owl-wrapper-outer">
               <div
-                className="owl-warpper"
+                className=""
                 style={{
                   left: 0,
                   display: "block",
@@ -65,49 +118,61 @@ function ProductBestSale(props) {
                   transform: "translate3d(0px, 0px, 0px)",
                 }}
               >
-                {database.length !== 0 ||
+                <Slider {...settings}>
+                   {database.length !== 0 ||
                 database.length === undefined ||
                 database !== null
                   ? database.map((value, key) => {
                       if (value.id !== 1) {
                         return (
-                          <li className="owl-item" id={value.id} key={key}>
-                            <div className="item">
-                              <Link
-                                to={
-                                  "/product-detail/" +
-                                  to_slug(value.name) +
-                                  "." +
-                                  value.id
-                                }
-                                onClick={() => getIDName(value)}
-                                className="vertion2020 large"
-                              >
-                                <div className="deal-sale">
-                                  <img src={value.url} alt="123"></img>
-                                  <div className="deal-discount">100%</div>
-                                </div>
-                                <div className="deal-price">{value.price}</div>
+                            <li
+                              className="container"
+                              id={value.id}
+                              key={key}
+                            >
+                              <div className="item">
+                                <Link
+                                  to={
+                                    "/product-detail/" +
+                                    to_slug(value.name) +
+                                    "." +
+                                    value.id
+                                  }
+                                  onClick={() => getIDName(value)}
+                                  className="vertion2020 large"
+                                >
+                                  <div className="deal-sale">
+                                    <img src={value.link} alt="123"></img>
+                                    <div className="deal-discount">50%</div>
+                                  </div>
+                                  {/* <div className="deal-price">
+                                    {formatVND(value.price)} đ
+                                  </div> */}
+                                <div className="deal-name">{ value.name}</div>
+                                {/* <div className="deal-price">{ value.price1}</div> */}
 
-                                <div className="deal-total">
-                                  <div className="roundy"></div>
-                                  <span>Vừa mở bán</span>
-                                </div>
-                              </Link>
-                            </div>
-                          </li>
+                                  {/* <div className="deal-total">
+                                    <div className="roundy"></div>
+                                    <span>Vừa mở bán</span>
+                                  </div> */}
+                                </Link>
+                              </div>
+                            </li>
+                         
                         );
                       }
                     })
                   : null}
+                    </Slider>
+               
               </div>
               <div className="clr" />
-              <div className="owl-controls clickable">
+              {/* <div className="owl-controls clickable">
                 <div className="owl-buttons">
                   <div className="owl-prev">&lt;</div>
                   <div className="owl-next">&gt;</div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>

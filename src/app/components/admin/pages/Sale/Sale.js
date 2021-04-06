@@ -4,7 +4,7 @@ import Swal from "sweetalert2";
 import "../scss/pageAdmin.scss";
 import "./Sale.scss";
 import Sale_Item from "./Sale_Item";
-import Form from "./page/Form/Form";
+import FormNewee from "./page/Form/FormNewee";
 import * as actions from "../../../../_actions/custommer/isDisplayForm/DisplayForm";
 import { useDispatch } from "react-redux";
 import { Link } from "react-router-dom";
@@ -119,6 +119,7 @@ function Sale(props) {
         indexofLastPost
       );
       setArr(Post);
+      console.log(arr);
       //này e mấy e tính số trang page để hiển thị ra cho người dùng
       // Math.ceil là mấy e lấy 5/2 =2.5 thì mình lấy 3 dị đó
       // response.data.length só phần tử của mảng danh sách lấy về chia cho số phần mình cần hiển thị ra giao diện
@@ -137,7 +138,7 @@ function Sale(props) {
     }
   }
   return (
-    <div className="body-cate">
+    <div className="body-cate sales-container">
       <nav>
         <Link to={"/admin/all"}>Tất Cả</Link>
         <Link to={"/admin/all"}>Chờ xác nhận</Link>
@@ -147,19 +148,30 @@ function Sale(props) {
         <Link to={"/admin/all"}>Đơn hủy</Link>
         <Link to={"/admin/all"}>Trả hàng/Hoàn tiền</Link>
       </nav>
-      <div className="form-group av">
-        <div className="btn-group">
-          <button className="btn" type="submit">
-            Tìm kiếm Đơn hàng
-          </button>
-          <button className="btn outline-pri" type="submit">
-            Ngày đặt đơn hàng.
-          </button>
-        </div>
+      <div className="form-group av" style={{ marginBottom: "16px" }}>
+        <label htmlFor="exampleInputEmail1">Tên sản phẩm</label>
+        <input
+          type="text"
+          name="search"
+          className="form-control"
+          placeholder="Nhập vào"
+        />
+        <button className="btn" type="submit">
+          Tìm kiếm
+        </button>
       </div>
+
+      <button
+        type="button"
+        class="btn btn-primary mt-16 larger"
+        onClick={() => onAdd(null)}
+      >
+        Thêm hóa đơn mới
+      </button>
+
       <h3 className="mt-16"> {count} đơn hàng</h3>
       {logged === true ? (
-        <Form id={id} onReload={onReloadPage} onSetLogged={onSetLogged}></Form>
+        <FormNewee id={id} onReload={onReloadPage} onSetLogged={onSetLogged}></FormNewee>
       ) : null}
       <table class="table table-hover">
         <thead>
@@ -172,11 +184,12 @@ function Sale(props) {
                 ref={register}
               />
             </th>
-            <th>ID</th>
-            <th>Tên sản phẩm</th>
-            <th>Tổng đơn hàng</th>
-            <th>Trạng thái</th>
-            <th>Thời gian tạo</th>
+            <th>Mã đơn hàng</th>
+
+            <th>Ngày mua </th>
+
+            <th>Tổng Tiền</th>
+            <th>Trạng thái đơn hàng</th>
             <th>Thao tác</th>
           </tr>
         </thead>

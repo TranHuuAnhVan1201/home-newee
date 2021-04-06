@@ -1,0 +1,27 @@
+.carts {
+    height: auto;
+    width: 100%;
+    .carts > h2 {
+        font-weight: 600;
+        font-size: 24px;
+        padding: 10px 0;
+        text-align: center;
+    }
+    .cart-content {
+        min-height: 200px;
+        height: auto;
+    }
+    .btn-carts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        padding-bottom: 10px;
+    }
+
+
+}
+    
+        

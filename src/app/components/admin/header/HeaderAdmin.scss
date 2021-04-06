@@ -1,4 +1,4 @@
-header {
+header.admin {
     top: 0;
     left: 0;
     position: fixed;
@@ -19,7 +19,7 @@ header {
             display: flex;
             justify-content: space-between;
             li {
-                width: 150px;
+                width: 300px;
                 padding: 0 30px 0 0;
                 list-style: none;
                 a {

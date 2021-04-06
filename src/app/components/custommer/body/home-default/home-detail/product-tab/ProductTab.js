@@ -35,7 +35,7 @@ function to_slug(str) {
   }
 }
 
-function ProductDatabase(props) {
+function ProductTab(props) {
   // database của reducer GetProductDatabase.js
   const dispatch = useDispatch();
 
@@ -55,6 +55,18 @@ function ProductDatabase(props) {
     dispatch(actions.IDName(item));
   };
 
+    const formatVND = (str) => {
+      if (typeof str !== "string") {
+        let toStr = String(str);
+        return toStr
+          .split("")
+          .reverse()
+          .reduce((prev, next, index) => {
+            return (index % 3 ? next : next + ".") + prev;
+          });
+      }
+    };
+
   return (
     <div className="home-product">
       <div className="product-top">
@@ -65,7 +77,7 @@ function ProductDatabase(props) {
           >
             <div className="owl-wrapper-outer">
               <div
-                className="owl-warpper"
+                className="owl-warpper row-detail"
                 style={{
                   left: 0,
                   display: "block",
@@ -91,32 +103,26 @@ function ProductDatabase(props) {
                               className="vertion2020 large"
                             >
                               <div className="item-img">
-                                <img src={value.url} alt="123"></img>
+                                <img src={value.link} alt="123"></img>
                               </div>
-                              <div className="item-title">{value.title}</div>
-                              <div className="item-rate">
-                                <div className="star">
-                                  <span>
-                                    <i class="icontgdd-star"></i>
-                                  </span>
-                                  <span>
-                                    <i class="icontgdd-star"></i>
-                                  </span>
-                                  <span>
-                                    <i class="icontgdd-star"></i>
-                                  </span>
-                                  <span>
-                                    <i class="icontgdd-star"></i>
-                                  </span>
-                                  <span>
-                                    <i class="icontgdd-star"></i>
-                                  </span>
-                                </div>
-                                <div className="review">(10)</div>
-                              </div>
+                              <div className="item-title">{value.name}</div>
+
                               <div className="item-price">
-                                <span>{value.price}</span>
-                                <span className="item-sale">{value.sale}%</span>
+                                <span className="deal-discount">{formatVND(value.price1)} đ</span>
+                                <span className="deal-price">{formatVND(value.price1)} đ</span>
+                                <span className="item-sale">{100}%</span>
+                              </div>
+                              <div className="item-coupon">
+                                Chiết khấu: 5%
+                              </div>
+
+                              <div className="item-rate">
+                                <i className="icon-star" />
+                                <i className="icon-star" />
+                                <i className="icon-star" />
+                                <i className="icon-star" />
+                                <i className="icon-star" />
+                                <span>2 đánh giá</span>
                               </div>
                             </Link>
                           </div>
@@ -126,12 +132,12 @@ function ProductDatabase(props) {
                   : null}
               </div>
               <div className="clr" />
-              <div className="owl-controls clickable">
+              {/* <div className="owl-controls clickable">
                 <div className="owl-buttons">
                   <div className="owl-prev">&lt;</div>
                   <div className="owl-next">&gt;</div>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </section>
@@ -140,4 +146,4 @@ function ProductDatabase(props) {
   );
 }
 
-export default ProductDatabase;
+export default ProductTab;

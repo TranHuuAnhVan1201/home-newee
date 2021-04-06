@@ -1,95 +1,29 @@
 @import './../../../../../scss/custom.scss';
+@import './../../../../../App.scss';
 .carts {
     height: auto;
     width: 100%;
-}
     .carts > h2 {
-        color: #FED101;
         font-weight: 600;
-        font-size: 2rem;
-        padding: 10px 0 0;
+        font-size: 24px;
+        padding: 10px 0;
         text-align: center;
     }
     .cart-content {
         min-height: 200px;
         height: auto;
     }
-        table {
-            width: 100%;
-            background: #FFF;
-            margin: 1em 0;
-            border: 1px solid rgba(34,36,38,.15);
-            box-shadow: none;
-            border-radius: .28571429rem;
-            text-align: left;
-            color: rgba(0,0,0,.87);
-            border-collapse: separate;
-            border-spacing: 0;
-            font-size: 16px;
-            font-weight: 500;
-            text-align: center;
-        }
-            thead {
-                height: 100px;
-                width: 100%;
-                background-color:#F9FAFB;
-                th {
-                    padding: 10px 0;
-                    width: calc(100% / 6);
-                    text-align: center;
-                    border: 1px solid rgba(34,36,38,.1);
-                }
-                  th:nth-child(6){
-                    width: 5%;
-                }
-                 tbody tr td {
-                    min-height: 100px;
-                    overflow: hidden;
-                    border: 1px solid rgba(34,36,38,.1);
-                    padding: 10px;
-                    position: relative;
-                }
-                  tbody tr td:nth-child(2) {
-                    text-align: left;
-                }
-                tbody tr td:nth-child(4),
-                tbody tr td:nth-child(5) {
-                    text-align: right;
-                }
-                tbody tr td.td-group {
-                    display: flex;
-                    flex-direction: row;
-                    justify-content: center;
-                    align-items: center;             
-                }
-                tbody tr td.td-group td {
-                    width: 20%;
-                }
-                
-            }
-                tbody tr td:nth-child(4),
-                tbody tr td:nth-child(5) {
-                    padding: 10px;
-                    text-align: right;
-                }
-                td {
-                    border: 1px solid #eee;
-                }
-            table img {
-                max-width: 200px;
-                max-height: 50px;
-            }
-               
-                
-              
-            tfoot {
-                height: 100px;
-                width: 100%;
-                background-color: #F9FAFB;
-            }
-                tfoot tr > td {
-                    height: 50px !important;
-                    text-align: right;
-                    padding: 10px;
-                    border: 1px solid rgba(34,36,38,.1);
-                }
+    .btn-carts {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 16px;
+        font-weight: 400;
+        color: white;
+        padding-bottom: 10px;
+    }
+
+
+}
+    
+        

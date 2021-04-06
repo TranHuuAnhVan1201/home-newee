@@ -1,0 +1,92 @@
+.item-body-deafault-admin-right {
+    .body-cate {
+        margin: 0;
+    }
+
+    .body-cate.analysis {
+        margin: 0;
+        padding: 0 16px 0 0;
+
+        h2 {
+            padding: 16px;
+            border-bottom: 2px solid rgb(242, 242, 242);
+        }
+
+        .analysis-container {
+            width: 100%;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: flex-start;
+
+            .left {
+                width: calc(70% - 16px);
+
+                .left-col {
+                    width: 100%;
+                    margin: 0 0 16px;
+                    background: #FFF;
+                    padding: 16px;
+                    border-radius: 6px;
+
+                    .row {
+                        display: flex;
+                        padding: 0 0 16px;
+
+                        .col-3 {
+                            width: 25%;
+                            display: flex;
+                            flex-direction: column;
+                            justify-content: flex-end;
+
+                        }
+                    }
+
+                    .left-col-group {}
+
+                    .analysis-search {
+                        .analysis-search-header {
+                            display: flex;
+                            justify-content: space-between;
+                            margin-bottom: 16px;
+                        }
+                    }
+                }
+            }
+
+            .right {
+                width: 30%;
+                display: flex;
+                flex-direction: column;
+
+                .d-flex-column {
+                    padding: 24px;
+                    margin-bottom: 16px;
+                    border-radius: 2px;
+                    background-color: #fff;
+                    width: 100%;
+                    border-radius: 6px;
+
+                    .d-flex-column-space-between {
+                        margin-bottom: 16px;
+
+                        .btns {
+                            padding: 0 10px;
+                            font-size: 14px;
+                        }
+                    }
+
+                    ul {
+                        li {
+                            align-items: center;
+                            height: 34px;
+                            cursor: pointer;
+                            border-bottom: 1px solid #eee;
+                        }
+                    }
+                }
+
+            }
+        }
+    }
+}

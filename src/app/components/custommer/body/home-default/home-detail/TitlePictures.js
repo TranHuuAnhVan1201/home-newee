@@ -5,7 +5,7 @@ function TitlePictures(props) {
        
         <div className="titlePictures">
             <section>
-                <img src={Pictures} alt="LaptopNCT TOP sản phẩm đáng mua" />
+                <img src={Pictures} alt=" sản phẩm đáng mua" />
             </section>
         </div>
     );

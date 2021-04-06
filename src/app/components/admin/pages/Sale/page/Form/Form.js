@@ -49,7 +49,7 @@ console.log(list);
           <div className="forms form-container">
             <div className="form-left">
               <div className="h3-group">
-                <h3>Đã giao</h3>
+                <h3>Đã giao Newee 13</h3>
               </div>
               <div className="h3-group">
                 <h3>Lịch sử mua hàng của người mua</h3>
@@ -162,7 +162,7 @@ console.log(list);
                   <tfoot>
                     <tr>
                       <td colSpan={5}>Tổng đơn hàng: </td>
-                      <td>{check ? detail.total_price : null} USD</td>
+                      <td>{check ? detail.total_price : null} VNĐ</td>
                     </tr>
                   </tfoot>
                 </table>

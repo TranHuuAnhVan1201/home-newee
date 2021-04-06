@@ -129,7 +129,7 @@ function Products(props) {
     }
   }
   return (
-    <div className="body-cate">
+    <div className="body-cate products-container">
       <nav>
         <Link to={"/admin/all"}>Tất Cả</Link>
         <Link to={"/admin/all"}>Đang hoạt động</Link>
@@ -148,17 +148,17 @@ function Products(props) {
           Tìm kiếm
         </button>
       </div>
-      <button
+      {/* <button
         type="button"
         class="btn btn-primary mt-16 larger"
         onClick={() => onAdd(null)}
       >
         Thêm 1 sản phẩm mới
-      </button>
+      </button> */}
       {logged === true ? (
         <Form id={id} onReload={onReloadPage} onSetLogged={onSetLogged}></Form>
       ) : null}
-      <table class="table table-hover">
+      <table class="table table-hover" style={{marginTop: "20px"}}>
         <thead>
           <tr>
             <th>
@@ -173,7 +173,9 @@ function Products(props) {
 
             <th>Số lượng</th>
             <th>Giá</th>
-            <th>Sửa thông tin</th>
+            <th>Giá CTV</th>
+            <th>Chiết khấu</th>
+            <th>Chi tiết</th>
           </tr>
         </thead>
         <tbody>

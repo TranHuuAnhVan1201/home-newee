@@ -352,9 +352,7 @@ function Form(props) {
                           return (
                             <li key={key}>
                               <img
-                                src={
-                                  id ? value.url : value
-                                }
+                                src={id ? value.url : value}
                                 style={
                                   id
                                     ? { border: "1px solid rgba(0,0,0,.2)" }
